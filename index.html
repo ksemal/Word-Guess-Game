@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" /> 
+        <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+        <link href="https://fonts.googleapis.com/css?family=Creepster|Eater|Mystery+Quest|Nosifer" rel="stylesheet">
+        <title>Hangman</title>
+    </head>
+    <body>
+        <div class="main-content">
+            <div class="left">
+                <img class="ghost" src="assets/images/Ghost.png" alt="ghost"/>
+                <p class="heading">Welcome to the Hallowen Hangman</p>
+                <p class="sm">Press the pumpkin to start</p>
+                <img class="bg_img" src="assets/images/Halloween_Scary_Pupmkins_Background.jpg" alt="background"/>
+                <img id="button" src="assets/images/r.png" alt="button"/>
+            </div>
+            <div class="right"> 
+                <img class="gif" src="assets/images/pumpkin.gif" alt="background"/>
+                <div id="score"></div>
+                <div id="usedLetters">
+                    <span class="alphabet" id="0">A</span><span class="alphabet" id="1">B</span><span class="alphabet" id="2">C</span><span class="alphabet" id="3">D</span><span class="alphabet" id="4">E</span><span class="alphabet" id="5">F</span>
+                    <span class="alphabet" id="6">G</span><span class="alphabet" id="7">H</span><span class="alphabet" id="8">I</span><span class="alphabet" id="9">J</span><span class="alphabet" id="10">K</span><span class="alphabet" id="11">L</span>
+                    <span class="alphabet" id="12">M</span><span class="alphabet" id="13">N</span><span class="alphabet" id="14">O</span><span class="alphabet" id="15">P</span><span class="alphabet" id="16">Q</span><span class="alphabet" id="22">W</span>
+                    <span class="alphabet" id="17">R</span><span class="alphabet" id="18">S</span><span class="alphabet" id="19">T</span><span class="alphabet" id="20">U</span>
+                    <span class="alphabet" id="23">X</span><span class="alphabet" id="24">Y</span><span class="alphabet" id="25">Z</span>
+                    <p id="alert"></p>
+                </div>
+                <div id="wins"></div>
+                <div id="matchedLetters"></div>            
+            </div> 
+        </div>
+        <script src="assets/javascript/game.js"></script>
+    </body>
+</html>

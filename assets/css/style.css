@@ -1,0 +1,248 @@
+* {
+    box-sizing: border-box;
+}
+
+#usedLetters {
+    border: 2px solid;
+    border-color: rgba(255, 166, 0, 0.774); 
+    border-radius: 30px;
+    width: 48%;
+    text-align: center;
+    height: auto;
+    position: absolute;
+    float: left;
+    right: 3%;
+    top: 3%;
+    padding: 20px 40px 20px 40px; 
+    background-color: black; 
+}
+#matchedLetters {
+    border: 3px solid; 
+    border-radius: 22px;
+    border-color: orange;
+    width: 40%;
+    height: 60px;
+    position: absolute;
+    right: 3%;
+    top: 38%;
+    font-family: "Nosifer";
+    color: wheat;
+    font-size: 25px;
+    padding-top: 15px;
+    text-align: center;
+    background-color: black;
+}
+#score {
+    border: 2px solid;
+    border-color: rgba(255, 166, 0, 0.774); 
+    border-radius: 30px;
+    width: 35%;
+    height: 150px;
+    color: wheat;
+    background-color: rgb(104, 67, 0);
+    position: absolute;
+    float: left;
+    right: 45%;
+    top: 12%;
+    font-family: "Nosifer";
+    line-height: 1.4;
+    font-size: 21px;
+    text-align: left;
+    padding: 20px 50px 0px 26px;   
+}
+#button {
+    z-index: 1;
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+}
+#button:hover {
+    transform: scaleX(-1);
+}
+#wins {
+    width: 25%;
+    height: 60px;
+    border-radius: 22px;
+    border: 2px solid;
+    border-color: rgba(255, 166, 0, 0.774);
+    background-color: rgb(104, 67, 0);
+    position: absolute;
+    top: 42%;
+    right: 40%;
+    font-family: "Nosifer";
+    font-size: 20px;
+    text-align: center;
+    color: wheat;
+    padding-top: 20px;
+}
+body {
+    background: black;
+    width: 100%; 
+    margin: 0;  
+}
+.main-content { 
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1280px;  
+}
+.right {
+    float: left;
+    width: 55%;
+    position: relative;
+    height: 100vh;
+}
+.left {
+    float: left;
+    width: 45%;
+   position: relative;
+    
+}
+.bg_img {
+    max-height: 800px;
+    height: 100vh;
+    min-width: 100%; 
+    
+}
+.ghost {
+    z-index: 2;
+    position: absolute;
+    top: 20%;
+    left: -15%;
+    width: 20%;
+    opacity: 0;
+    animation: ghost 8s ease-in-out infinite alternate-reverse; 
+}
+@-webkit-keyframes ghost{
+    0% {
+        top: 20%;
+        left: -15%;
+        opacity: 0;
+    }
+    50% {
+        top: -20%;
+        left: 40%;
+        opacity: 0.7;
+        transform: scaleX(1);
+    }
+    51% {
+        transform: scaleX(-1);
+    }
+    100% {
+        top: 50%;
+        left: 100%;
+        opacity: 0.9;
+        transform: scaleX(-1);
+    }
+    }
+.heading {
+    font-family: "Eater";
+    line-height: 2;
+    color: #fe7f00e8;
+    z-index: 1;
+    position: absolute;
+    font-size: 32px;
+    top:32%;
+    left: 32%;
+    width: 60%;
+    text-align: center;
+    text-shadow: 3px 3px 20px #f95336; 
+    animation: glow 1s ease-in-out infinite alternate;  
+}
+@-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #723300, 0 0 10px #f8816c;
+    }
+    to {
+      text-shadow: 0 0 20px #723300, 0 0 60px #f33210;
+    }
+  }
+.sm {
+    position: absolute;
+    font-size: 18px;
+    font-family: "Creepster";
+    z-index: 1;
+    text-align: right;
+    top:65%;
+    left: 45%;
+    color: rgb(255, 204, 170);
+    letter-spacing: 3px; 
+}
+.gif {
+    width: 78%;
+    position: absolute;
+    bottom:0%;
+    right: 0%;   
+}
+.alphabet {
+    visibility: hidden;
+    color: orange;
+    font-size: 30px;
+    font-family: 'Mystery Quest', cursive;
+    letter-spacing: 10px;
+}
+#alert {
+    font-family: "Creepster";
+    color: #f33210;
+    font-size: 20px;
+    padding-top: 10px;
+}
+@media screen and (max-width: 640px) {
+    .heading {
+        left: 25%;
+        line-height: 2;
+    }
+    .sm {
+        left: 5%;   
+    }
+    #button {
+        width: 35%;
+        right: 0%;
+        bottom: 0%;  
+    }
+    .left {
+        width: 100%;
+        height: auto;   
+    }
+    .right {
+        width: 100%;
+    }
+    .bg_img {
+        width: 100%;
+        height: auto;       
+    }
+    .gif {
+        width: 100%;     
+    } 
+    #usedLetters {
+        width: 60%;
+    } 
+    #score {
+        left: 8%;
+    }  
+    #matchedLetters {
+        width: 60%;
+    } 
+    #wins {
+        right: 60%;
+    }  
+}
+@media screen and (max-width: 768px) {
+    .left {
+        width: 100%;
+        height: auto;
+    }
+    .right {
+        width: 100%;
+    }
+    .bg_img {
+        width: 100%;
+        height: auto;    
+    }
+    .heading {
+        left: 18%;   
+    }
+    .sm {
+        left: -30%;
+        width: 100%;
+    }
+}
