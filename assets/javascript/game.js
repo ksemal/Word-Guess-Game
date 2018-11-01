@@ -29,7 +29,6 @@ var game = {
     showOnTheStart: function() {
         score = 12;
         document.getElementById("score").style.color = "wheat";
-        document.getElementById("alert").textContent = "";
         document.getElementById("wins").textContent = "Wins: " + wins;
         document.getElementById("score").textContent = "# of guesses remaining: " + score;
     },
@@ -50,6 +49,7 @@ var game = {
         }
     },
     alphabetColor: function() {
+        document.getElementById("alert").textContent = "";
         if (this.alphabet.indexOf(yourInput)>=0) {
             document.getElementById(this.alphabet.indexOf(yourInput)).style.color = "grey";
         } else {
@@ -62,7 +62,13 @@ var game = {
     },
     looseText: function() {
         document.getElementById("score").textContent = "Game Over! Booooo!";
-        document.getElementById("score").style.color = "orangered";
+        document.getElementById("score").style.color = "orangered";  
+    },
+    audioPlay: function() {
+        audio.play();
+    },
+    audioStop: function() {
+        audio.pause();  
     }
 };
     
@@ -73,6 +79,7 @@ var game = {
     game.showOnTheStart();
 
     document.onkeyup = function(event) {
+        
         yourInput = event.key;
         console.log(yourInput);
 
@@ -85,15 +92,15 @@ var game = {
         game.openALetter();
         game.alphabetColor();
         if (hiddenWord.indexOf("_") === -1 && score > 0) {
-            game.winText();
+            game.audioPlay();
             game.wins();
-            audio.play();
-            setTimeout(start, 3000);
+            game.winText();
+            setTimeout(start, 3000);  
         }
         if (score <= 0) {
-            game.looseText();
-            audio.pause();
-            setTimeout(start, 3000);
+            game.audioStop();
+            game.looseText(); 
+            setTimeout(start, 3000);  
         } 
     };
 };
