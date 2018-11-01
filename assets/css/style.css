@@ -189,10 +189,10 @@ body {
 @media screen and (max-width: 640px) {
     .heading {
         left: 25%;
-        line-height: 2;
+        line-height: 1.5;
     }
     .sm {
-        left: 5%;   
+         font-size: 15px; 
     }
     #button {
         width: 35%;
