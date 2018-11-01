@@ -5,7 +5,7 @@ var currentWord;
 var yourInput;
 var audio = new Audio("assets/Horror.mp3");
 var game = {
-    words: ["hallowen", "trick", "treat", "holiday", "pumpkin"],
+    words: ["hallowen", "trick", "treat", "holiday", "pumpkin", "mummy", "mutant", "witch", "ghost", "vampire", "zombie", "goblin", "lantern", "costume", "sweets", "darkness", "monster", "shadows", "decorations", "moonlight", "spiderweb", "night", "supernatural", "orange", "party", "harvest", "autumn", "squash", "corn", "leaves", "fairy", "candy", "flashlight", "phantom", "cemetery", "poltergeist", "coffin", "corpse", "graveyard", "spirit", "dead", "tombstone"],
     alphabet: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
     orangeLetters: function() {
         var usedLetters = document.getElementsByClassName("alphabet");
@@ -15,7 +15,7 @@ var game = {
         }
     },
     randomNumber: function() {
-        var currentWordNumber = Math.floor(Math.random()*5);
+        var currentWordNumber = Math.floor(Math.random()*42);
         currentWord = this.words[currentWordNumber].split("");
         console.log(currentWord);
     },
