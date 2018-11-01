@@ -3,6 +3,7 @@ var score;
 var hiddenWord;
 var currentWord;
 var yourInput;
+var audio = new Audio("assets/Horror.mp3");
 var game = {
     words: ["hallowen", "trick", "treat", "holiday", "pumpkin"],
     alphabet: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
@@ -63,8 +64,6 @@ var game = {
         document.getElementById("score").textContent = "Game Over! Booooo!";
         document.getElementById("score").style.color = "orangered";
     }
-
-
 };
     
     document.getElementById("button").onclick = function start() {
@@ -78,11 +77,7 @@ var game = {
         console.log(yourInput);
 
         if (hiddenWord.indexOf("_") === -1 || score === 0) {
-            start();
-        }
-
-        if (hiddenWord.indexOf("_") === -1 || score === 0) {
-            game.showOnTheStart();
+            return;
         }
         if (currentWord.indexOf(yourInput) === -1) {
             game.scorecount();
@@ -92,10 +87,13 @@ var game = {
         if (hiddenWord.indexOf("_") === -1 && score > 0) {
             game.winText();
             game.wins();
+            audio.play();
+            setTimeout(start, 3000);
         }
         if (score <= 0) {
-            game.looseText();  
+            game.looseText();
+            audio.pause();
+            setTimeout(start, 3000);
         } 
-
     };
 };
