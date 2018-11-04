@@ -15,7 +15,7 @@ var game = {
         }
     },
     randomNumber: function() {
-        var currentWordNumber = Math.floor(Math.random()*42);
+        var currentWordNumber = Math.floor(Math.random()*42) + 1;
         currentWord = this.words[currentWordNumber].split("");
         console.log(currentWord);
     },
